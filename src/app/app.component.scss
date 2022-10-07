@@ -15,12 +15,21 @@
     }
 
     &-block--img {
+
+        width: 15rem;
+        height: 15rem;
+
         @include media-breakpoint-down(lg) {
             width: 18rem;
             height: 15rem;
             border-radius: 1rem;
             margin: auto;
         }
+
+        &:hover {
+            cursor: pointer;
+        }
+
     }
 
     &-img {
@@ -43,5 +52,14 @@
         font-size: 1rem;
     }
 
+
+}
+
+.Main {
+    position: relative;
+
+    @include media-breakpoint-up(lg) {
+        flex-grow: 1;
+    }
 
 }

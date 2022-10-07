@@ -1,16 +1,17 @@
 <div class="container-fluid h-100">
   <!-- BREAKPOINT IS LG -->
-  <div class="Principal row d-flex">
+  <div class="Principal row d-flex h-100">
 
-    <header class="Principal-header Header col-12 col-lg-4 d-lg-flex px-0" style="border:2px solid red">
+    <header class="Principal-header Header col-12 col-lg-4 d-lg-flex px-0">
 
       <div class="Header-names d-none d-lg-block border">
-        <h5 class="Header-h5 Header-h5--verticalAlign text-muted"> <small class="text-muted">Design by </small> Juan T.</h5>
+        <h5 class="Header-h5 Header-h5--verticalAlign text-muted"> <small class="text-muted">Design by </small> Juan T.
+        </h5>
       </div>
 
       <div class="Header-blocks position-relative py-5">
-        <div class="Header-block Header-block--img shadow-lg">
-          <!--    <img src="assets/map.jpg" alt="" class="Header-img"> -->
+        <div class="Header-block Header-block--img shadow-sm m-auto rounded-5" (click)="goMyPosition($event)">
+          <img src="assets/maplogo.png" alt="" class="Header-img">
         </div>
 
         <div class="Header-block text-center mt-4">
@@ -18,17 +19,18 @@
           <p class="px-2">Busca tu restaurante favorito, y encuentralo en nuestro mapa!</p>
         </div>
 
-        <div class="Header-block Header-block--sidenav" style="border:2px solid red">
+        <div class="Header-block Header-block--sidenav px-3">
 
+          <app-sidenav></app-sidenav>
+
+     
         </div>
 
       </div>
-
     </header>
 
-
-    <main class="Main col-12 col-lg-5 flex-grow-1" style="border:2px solid blue">
-
+    <main class="Main col-12 col-lg-5 px-0 h-100">
+      <app-maps></app-maps>
     </main>
   </div>
 

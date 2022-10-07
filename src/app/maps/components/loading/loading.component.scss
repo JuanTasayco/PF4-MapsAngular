@@ -1,0 +1,16 @@
+@use "src/_custom" as *;
+
+.Loading {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include media-breakpoint-up(lg) {
+        position: absolute;
+        inset: 0;
+    }
+
+}

@@ -1,4 +1,7 @@
 $family: 'Inter', sans-serif;
 $font-family-sans-serif: $family;
+$list-group-border-width: 0px;
+$list-group-bg: #FAFCFF;
+$danger: #FAFCFF;
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

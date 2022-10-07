@@ -1,0 +1,11 @@
+.Maps {
+
+    position: absolute;
+    inset: 0;
+    &-block--mobile {
+        z-index: 99;
+        position: absolute;
+    }
+
+    &-button {}
+}

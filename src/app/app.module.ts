@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MapsModule } from './maps/maps.module';
 import { SidenavComponent } from './shared/sidenav/sidenav.component';
 
 @NgModule({
@@ -12,7 +13,8 @@ import { SidenavComponent } from './shared/sidenav/sidenav.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MapsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
