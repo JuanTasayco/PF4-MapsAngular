@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapsModule } from './maps/maps.module';
 import { SidenavComponent } from './shared/sidenav/sidenav.component';
+import { HttpClientModule } from '@angular/common/http'
+
 
 @NgModule({
   declarations: [
@@ -14,7 +16,8 @@ import { SidenavComponent } from './shared/sidenav/sidenav.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MapsModule
+    MapsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

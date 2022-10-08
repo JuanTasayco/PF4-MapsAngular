@@ -3,5 +3,7 @@ $font-family-sans-serif: $family;
 $list-group-border-width: 0px;
 $list-group-bg: #FAFCFF;
 $danger: #FAFCFF;
+$list-group-active-bg: #FFDBDB;
+$list-group-active-color: rgba(0,0,0,0.7);
 
 @import "../node_modules/bootstrap/scss/bootstrap.scss";

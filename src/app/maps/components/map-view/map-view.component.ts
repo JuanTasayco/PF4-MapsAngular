@@ -2,6 +2,7 @@ import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { PlacesService } from '../../services/places.service';
 import * as  mapboxgl from "mapbox-gl";
 import { Popup, Marker } from 'mapbox-gl';
+import { MapboxService } from '../../services/mapbox.service';
 
 @Component({
   selector: 'app-map-view',
@@ -24,6 +25,7 @@ export class MapViewComponent implements AfterViewInit {
       zoom: 16
     });
 
+    this.mapboxService.setMyMap(this.map);
 
     const popup = new Popup()
       .setHTML(
@@ -31,24 +33,21 @@ export class MapViewComponent implements AfterViewInit {
       <h5 class="fw-bold">Estás aquí</h5>
     `);
 
-
     new Marker({ color: "red" })
       .setLngLat(this.mapsService.userLocation)
       .setPopup(popup)
       .addTo(this.map);
-
   }
 
 
 
 
-  constructor(private mapsService: PlacesService) {
+  constructor(private mapsService: PlacesService, private mapboxService: MapboxService) {
     this.mapsService.eventClickToMyPosition.subscribe(eventoClick => {
       this.map.flyTo({
         center: this.mapsService.userLocation,
         zoom: 17,
         essential: true
-
       })
     })
   }

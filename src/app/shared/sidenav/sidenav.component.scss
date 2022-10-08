@@ -1,1 +1,23 @@
+@use "src/_custom";
 
+
+
+.Results {
+    max-height: 30rem;
+    overflow: auto;
+
+    &-li {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+
+    &-ul{
+        
+    }
+
+    &::-webkit-scrollbar-track{
+        background:red;
+        color:black;
+    }
+}

@@ -1,30 +1,22 @@
 <form action="Form row">
-    <input type="text" class="Form-input form-control" placeholder="Busca tu restaurante">
+    <input type="text" class="Form-input form-control" placeholder="Busca tu restaurante"
+        (input)="obtenerRestaurantes($event)">
 </form>
 
-
-
-<div class="alert alert-danger mt-2 text-center border shadow-sm">
+<div class="alert alert-danger mt-2 text-center border shadow-sm" *ngIf="!placesIsReady">
     <h6>Cargando</h6>
     <span>Espere por favor...</span>
 </div>
 
+<div class="Results  mt-3" *ngIf="places.length>0">
+    <ul class="Results-ul list-group">
+        <li class="Results-li list-group-item border-bottom list-group-item-action pointer" 
+            *ngFor="let place of places"
+            [class.active]="place.id === idSelected " (click)="flyToo(place)">
+            <h6 class="Results-h6">{{place.text_es}}</h6>
+            <p class="Results-p">{{place.place_name}}</p>
+            <button class="Results-button btn btn-sm btn-danger border shadow-sm">Direccionar</button>
+        </li>
 
-<ul class="Results list-group">
-    <li class="Result-li list-group-item border-bottom">
-        <h6 class="Results-h6">Lugar</h6>
-        <p class="Results-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat vel neque voluptas. Nobis
-            sit facere libero quibusdam itaque voluptatem commodi tempora. Fuga maiores alias veniam labore sed maxime.
-            Dicta, quos.
-            <button class="Results-button btn btn-sm btn-danger border shadow-sm ">Direccionar</button>
-        </p>
-    </li>
-    <li class="Result-li list-group-item border-bottom ">
-        <h6 class="Results-h6">Lugar</h6>
-        <p class="Results-p">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat vel neque voluptas. Nobis
-            sit facere libero quibusdam itaque voluptatem commodi tempora. Fuga maiores alias veniam labore sed maxime.
-            Dicta, quos.
-            <button class="Results-button btn btn-sm btn-danger border shadow-sm ">Direccionar</button>
-        </p>
-    </li>
-</ul>
+    </ul>
+</div>

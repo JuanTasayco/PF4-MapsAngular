@@ -10,7 +10,7 @@ export class MapsComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.mapsService.getLocationUser().subscribe(console.log)
+    this.mapsService.getLocationUser().subscribe()
   }
 
   get isUserLocationReady() {
