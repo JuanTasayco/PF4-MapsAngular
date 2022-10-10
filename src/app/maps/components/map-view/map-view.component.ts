@@ -3,6 +3,7 @@ import { PlacesService } from '../../services/places.service';
 import * as  mapboxgl from "mapbox-gl";
 import { Popup, Marker } from 'mapbox-gl';
 import { MapboxService } from '../../services/mapbox.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-map-view',
@@ -40,9 +41,12 @@ export class MapViewComponent implements AfterViewInit {
   }
 
 
+  redireccion(){
+   /*  this.route.navigate(['../', '#results']) */
+  }
 
-
-  constructor(private mapsService: PlacesService, private mapboxService: MapboxService) {
+  constructor(private mapsService: PlacesService, private mapboxService: MapboxService
+    , private route: Router) {
     this.mapsService.eventClickToMyPosition.subscribe(eventoClick => {
       this.map.flyTo({
         center: this.mapsService.userLocation,

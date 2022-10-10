@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MapsComponent } from './screens/maps/maps.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { MapViewComponent } from './components/map-view/map-view.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,7 +17,8 @@ import { MapViewComponent } from './components/map-view/map-view.component';
     MapsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ]
 })
 export class MapsModule { }

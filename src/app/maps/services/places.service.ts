@@ -11,9 +11,7 @@ export class PlacesService {
 
   public userLocation?: [number, number];  // declaro el formato que tendrá la geolocalización , pongo ? porque puede que haya o no
   tokenmapBox: string = environment.mapboxToken;
-  mapboxUrl: string = "https://api.mapbox.com/geocoding/v5/mapbox.places"
-
-
+  mapboxUrl: string = "https://api.mapbox.com/geocoding/v5/mapbox.places";
 
   //saber si la location del usuario está lista.
   get isUserLocationReady(): boolean {
@@ -45,7 +43,6 @@ export class PlacesService {
       .set("language", "es")
       .set("access_token", this.tokenmapBox)
       .set("proximity", this.userLocation!.join(","))
-
     return this.http.get<PlacesResponse>(`${this.mapboxUrl}/${query}.json?${params}`)
       .pipe(map(resp => resp.features))
   }

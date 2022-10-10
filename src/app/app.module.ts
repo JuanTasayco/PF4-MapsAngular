@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MapsModule } from './maps/maps.module';
 import { SidenavComponent } from './shared/sidenav/sidenav.component';
 import { HttpClientModule } from '@angular/common/http'
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http'
     AppRoutingModule,
     MapsModule,
     HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

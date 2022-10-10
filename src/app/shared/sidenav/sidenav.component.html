@@ -1,4 +1,4 @@
-<form action="Form row">
+<form action="Form row" id="results">
     <input type="text" class="Form-input form-control" placeholder="Busca tu restaurante"
         (input)="obtenerRestaurantes($event)">
 </form>
@@ -8,15 +8,18 @@
     <span>Espere por favor...</span>
 </div>
 
-<div class="Results  mt-3" *ngIf="places.length>0">
+<div class="Results mt-3" *ngIf="places.length>0">
     <ul class="Results-ul list-group">
-        <li class="Results-li list-group-item border-bottom list-group-item-action pointer" 
-            *ngFor="let place of places"
-            [class.active]="place.id === idSelected " (click)="flyToo(place)">
-            <h6 class="Results-h6">{{place.text_es}}</h6>
-            <p class="Results-p">{{place.place_name}}</p>
-            <button class="Results-button btn btn-sm btn-danger border shadow-sm">Direccionar</button>
-        </li>
 
+        <li class="Results-li list-group-item border-bottom list-group-item-action pointer" *ngFor="let place of places"
+            [class.active]="place.id === idSelected" (click)="flyToo(place)">
+            <a href="#mapbox" class="Results-a">
+                <h6 class="Results-h6">{{place.text_es}}</h6>
+                <p class="Results-p">{{place.place_name}}</p>
+            </a>
+
+            <a class="Results-button btn btn-sm btn-danger border shadow-sm" href="#mapbox"
+                (click)="direccionar(place.center)">Mostrar ruta</a>
+        </li>
     </ul>
 </div>
