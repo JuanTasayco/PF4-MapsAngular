@@ -1,7 +1,7 @@
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AnySourceData, LngLatBounds, LngLatLike, Map, Marker, Popup } from 'mapbox-gl';
-import { Observable, of, switchMap, tap } from 'rxjs';
+import { of, switchMap } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Directions, Route } from '../interfaces/directionsRoute.interface';
 import { Feature } from '../interfaces/maps.interface';
@@ -100,7 +100,7 @@ export class MapboxService {
     const coords = route.geometry.coordinates; // --> OBTENGO EL ARREGLO DE COORDENADAS DE LA RUTA
     const bounds = new LngLatBounds(); //--> CREO LIMITES PARA QUE EL MAPA MUESTRE SOLO EL RANGO DE LA RUTA DESDE MI PUNTO HASTA EL DESTINO QUE ELIJO
 
-    coords.forEach(([lng, lat]) => {  // DESESTRUCTURO LNG, LAT PORQUE SI LO ENVÍO ASÍ NOMAS ME SALDRÁ QUE NO ES DE TIPO NUMBER [] Y PROBLMAMS EN EL TIPADO
+    coords.forEach(([lng, lat]: any) => {  // DESESTRUCTURO LNG, LAT PORQUE SI LO ENVÍO ASÍ NOMAS ME SALDRÁ QUE NO ES DE TIPO NUMBER [] Y PROBLMAMS EN EL TIPADO
       bounds.extend([lng, lat])
     })
 
